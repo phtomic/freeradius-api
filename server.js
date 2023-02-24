@@ -14,7 +14,7 @@ var express = require('express'),
 
   
 mongoose.Promise = global.Promise;
-mongoose.connect(process.env.MONGO_CONNECTION);
+mongoose.connect(config.database);
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
