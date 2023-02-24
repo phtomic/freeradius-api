@@ -14,7 +14,7 @@ var express = require('express'),
 
   
 mongoose.Promise = global.Promise;
-mongoose.connect(config.database);
+mongoose.connect(process.env.DBURL||config.database, { useNewUrlParser: true ,useUnifiedTopology: true});
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
